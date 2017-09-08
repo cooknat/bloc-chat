@@ -1,6 +1,8 @@
 (function() {
-    function HomeCtrl(Room) {      
-        this.message = "heeeellllp";
+    function HomeCtrl(Room) {
+
+        this.rmList = Room.getRooms();
+
     }
 
     angular
