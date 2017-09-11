@@ -5,8 +5,12 @@
     var ref = firebase.database().ref().child('rooms');
     var rooms = $firebaseArray(ref);
 
-    Room.getRooms = function(){
+    Room.getRooms = function(){      
        return rooms;
+    };
+
+    Room.add = function(room){
+        rooms.$add(room);
     };
 
     return Room;
@@ -14,5 +18,5 @@
 
   angular
     .module('blocChat')
-    .factory('Room', ['$firebaseArray', Room])
+    .factory('Room', ['$firebaseArray', Room]);
 })();

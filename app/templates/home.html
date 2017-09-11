@@ -1,2 +1,9 @@
 
-  <h2 ng-repeat="value in home.rmList">{{ value.$value }}</h2>
+
+  <ul ng-repeat="item in home.rmList">
+    <li>{{ item.$value }}</li>
+  </ul>
+
+ <div ng-controller='ModalCtrl as modals'>
+ <button type="button" ng-click="modals.open()">Add New Room</button>
+</div>

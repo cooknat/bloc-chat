@@ -1,0 +1,15 @@
+<div>
+    <div class="modal-header">
+        <h2 class="modal-title">Add a Room</h2>
+    </div>
+    <div class="modal-body">
+        <p>What do you want to call your room?</p>
+        <form name="add-room" ng-submit="modalInstance.ok()">
+            <input ng-model="newRoom" autofocus />
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="modalInstance.add(newRoom)">Add Room</button>
+        <button class="btn btn-warning" type="button" ng-click="modalInstance.cancel()">Cancel</button>
+    </div>
+</div>
