@@ -1,9 +1,24 @@
-
-
+<div class="header">
+  <h1>Bloc Chat</h1>
+</div>
+<div class="left-side">
+  <h2>Pick a room</h2>
   <ul ng-repeat="item in home.rmList">
-    <li>{{ item.$value }}</li>
+    <li ng-click="home.setActiveRoom(item)"><a>{{ item.$value }}</a></li>
   </ul>
 
  <div ng-controller='ModalCtrl as modals'>
  <button type="button" ng-click="modals.open()">Add New Room</button>
+</div>
+
+</div>
+<div class="right-side">
+    <div class="room-header">
+    <h2>{{ activeRoom.$value }}</h2>
+  </div>
+  <div class="room-content">
+ <ul ng-repeat="msg in currMessages">
+      <li>{{ msg.content }}</li>
+    </ul>
+  </div>
 </div>

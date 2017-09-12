@@ -1,0 +1,15 @@
+.left-side{
+  float: left;
+  padding: 10px 100px 10px 10px;
+
+}
+
+.right-side{
+    padding: 10px 10px 10px 100px;
+
+}
+
+.header{
+  text-align: center;
+  padding: 10px;
+}
