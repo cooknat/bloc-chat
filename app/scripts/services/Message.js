@@ -6,7 +6,10 @@
     var messages = $firebaseArray(ref);
 
     Message.getByRoomId = function(roomId) {
-       // Filter the messages by their room ID.       
+       // Filter the messages by their room ID.
+       if (!Number.isNaN(Number(roomId))) {
+       roomId = Number(roomId);
+}
       return $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
     };
 
