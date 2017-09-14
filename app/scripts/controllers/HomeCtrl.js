@@ -4,7 +4,7 @@
         this.rmList = Room.getRooms();
         //ditto. this takes a parameter (room name) pass it in from the template not from here
         this.newRoom = Room.add;
-
+        
         /*var self = this;
 
         this.setActiveRoom = function(activeRoom){
@@ -12,8 +12,7 @@
         };*/
 
         this.setActiveRoom = function(activeRoom){
-          $scope.activeRoom = activeRoom;      
-          console.log(typeof activeRoom.$id);
+          $scope.activeRoom = activeRoom;
           $scope.currMessages = Message.getByRoomId(activeRoom.$id);
         };
     }
