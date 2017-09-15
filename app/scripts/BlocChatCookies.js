@@ -1,7 +1,6 @@
 (function() {
   function BlocChatCookies($cookies, $uibModal) {
-    var currentUser = $cookies.get('blocChatCurrentUser');
-    console.log(currentUser);
+    var currentUser = $cookies.get('blocChatCurrentUser');    
     if (!currentUser || currentUser === '') {
       // Do something to allow users to set their username
       $uibModal.open({
