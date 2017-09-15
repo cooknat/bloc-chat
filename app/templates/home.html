@@ -1,4 +1,5 @@
-<div class="header">
+<div class="container">
+  <div class="header">
   <h1>Bloc Chat</h1>
 </div>
 <div class="left-side">
@@ -17,8 +18,15 @@
     <h2>{{ activeRoom.$value }}</h2>
   </div>
   <div class="room-content">
- <ul ng-repeat="msg in currMessages">
-      <li>{{ msg.content }}</li>
+     <ul ng-repeat="msg in currMessages">
+      <li>{{ msg.content + " " + msg.username + " " + msg.sentAt }}</li>
     </ul>
+  <div class="footer">
+    <form name="messageForm">
+      <textarea ng-model="newMessage"></textarea>
+      <button type="button" ng-click="home.createMessage(newMessage)">Send a message</button>
+    </form>
   </div>
+  </div>
+</div>
 </div>
