@@ -1,32 +1,45 @@
 <div class="container">
   <div class="header">
   <h1>Bloc Chat</h1>
+  <!--<p><a ng-click="home.logOut()">Sign Out</a></p>-->
 </div>
 <div class="left-side">
-  <h2>Pick a room</h2>
+  <h3>Take me to:</h3>
   <ul ng-repeat="item in home.rmList">
     <li ng-click="home.setActiveRoom(item)"><a>{{ item.$value }}</a></li>
   </ul>
 
- <div ng-controller='ModalCtrl as modals'>
- <button type="button" ng-click="modals.open()">Add New Room</button>
+ <div class="add-room" ng-controller='ModalCtrl as modals'>
+ <button class="btn btn-primary" type="button" ng-click="modals.open()">Add New Room</button>
 </div>
-
 </div>
 <div class="right-side">
     <div class="room-header">
     <h2>{{ activeRoom.$value }}</h2>
+  <!--  <ul ng-repeat="person in home.usersOnline">
+     <li>{{ person.$value }}</li>
+   </ul>-->
   </div>
   <div class="room-content">
+    <div class="messages">
      <ul ng-repeat="msg in currMessages">
-      <li>{{ msg.content + " " + msg.username + " " + msg.sentAt }}</li>
+      <li id="user">{{ msg.username }}</li>
+      <li id="msg">{{ msg.content }}</li>
+      <li id="time">{{ msg.sentAt }}</li>
     </ul>
+  </div>
+    <div class="people">
+     <h4 ng-show="activeRoom.$value">who's here?</h4>
+    </div>
+  </div>
+
+
   <div class="footer">
-    <form name="messageForm">
+    <form name="message-form" ng-show="activeRoom.$value">
       <textarea ng-model="newMessage"></textarea>
-      <button type="button" ng-click="home.createMessage(newMessage)">Send a message</button>
+      <button class="btn btn-primary" type="button" ng-click="home.createMessage(newMessage)">Send message</button>
     </form>
   </div>
   </div>
-</div>
+
 </div>

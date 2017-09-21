@@ -1,5 +1,5 @@
 (function() {
-    function ModalCtrl($uibModal, Room) {
+    function ModalCtrl($uibModal) {
         this.open = function() {
 
             var modalInstance = $uibModal.open({
@@ -7,12 +7,13 @@
               controller: 'ModalInstanceCtrl as modalInstance'
             });
 
-          /*  modalInstance.result.then(function() {
+
+          /*modalInstance.result.then(function() {
 
           });*/
     };
   }
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$uibModal', 'Room', ModalCtrl]);
+        .controller('ModalCtrl', ['$uibModal', ModalCtrl]);
 })();

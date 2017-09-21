@@ -1,32 +1,122 @@
-body{
-  font-family: font-family: 'IM Fell Great Primer', serif;
 
+.container {
+  background-image: url(../assets/img/background.jpg);
+  background-position: center center;
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 .header{
+  font-family: 'IM Fell Great Primer', serif;
   width: 100%;
-  height: 80px;
-  background-color: teal;
+  height: 10%;
   color: white;
-
+  margin: 5px;
+  text-align: center;
+  padding: 10px;
+  position: relative;
 }
+
+.header p{
+  position:absolute;
+     top:0;
+     right:0;
+}
+
+.header h1{
+  color: white;
+  font-size: 60px;
+}
+
   .left-side{
   float: left;
   padding: 10px 100px 10px 10px;
+  margin: 5px;
+  width: 26%;
+
+}
+
+.add-room{
+  text-align: right;
+}
+
+ul{
+  list-style: none;
+  font-weight: bold;
+}
+ul li a{
+    color: white;
+    font-size: 18px;
 
 }
 
 .right-side{
-    padding: 10px 10px 10px 100px;
+    padding: 10px 10px 10px 10px;
+    width: 72%;
     height: 100%;
+    text-align: left;
+    margin: 5px;
+    float: left;
 }
 
 
-.header{
-  text-align: center;
+.right-side .room-header{
+  width: 100%;
+  height: auto;
   padding: 10px;
+  color: white;
+
 }
 
+.right-side .room-content{
+  width: 100%;
+  height: 74%;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+.messages {
+  width: 75%;
+}
+.people {
+  color: white;
+  width: 22%;
+  text-align: right;
+  position:absolute;
+     top:0;
+     right:0;
+
+}
+
+#user{
+  font-size: 10px;
+}
+
+#time{
+  font-size: 10px;
+}
 .footer{
+  width: 60%;
+  height: 15%;
+  position:absolute;
+     bottom:0;
+     right:200;
+}
+form{
+  padding: 10px;
+  color: black;
+}
+
+form button{
+  margin: 0px 0px 10px 10px;
+  vertical-align: bottom;
+}
+
+textarea{
+  color: black;
+  width: 80%;
+  height: 70px;
+  margin: 10px;
   vertical-align: bottom;
 }

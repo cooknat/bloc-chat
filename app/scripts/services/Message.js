@@ -16,7 +16,7 @@
     Message.getMsg = function(){
        return messages;
     };
-
+    
     Message.send = function(message, activeRoom) {
        // Send method logic
        var user = $cookies.get('blocChatCurrentUser');

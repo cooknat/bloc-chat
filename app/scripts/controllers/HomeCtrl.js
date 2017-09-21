@@ -1,11 +1,14 @@
 (function() {
-    function HomeCtrl(Room, Message, $scope) {
+    function HomeCtrl(Room, Message, Users, $scope) {
         //no parentheses here because you're just assigning, not actually calling the method (ask carrie - it doesn't work without?)
         this.rmList = Room.getRooms();
         //ditto. this takes a parameter (room name) pass it in from the template not from here
         this.newRoom = Room.add;
 
         this.newMessage = Message.send;
+
+        this.usersOnline = Users.activeUsers;
+      
 
         /*var self = this;
 
@@ -20,11 +23,19 @@
 
         this.createMessage = function(newMessage){
             Message.send(newMessage, $scope.activeRoom);
+            $scope.newMessage = null;
         };
-    
+
+
+
+      //  this.logOut = SecurityCtrl.logUserOut();
+
+
+
+
     }
 
     angular
         .module('blocChat')
-        .controller('HomeCtrl', ['Room', 'Message', '$scope', HomeCtrl]);
+        .controller('HomeCtrl', ['Room', 'Message', 'Users', '$scope', HomeCtrl]);
 })();
