@@ -4,20 +4,29 @@
     var Users = {};
     var ref = firebase.database().ref().child('usersOnline');
     var activeUsers = $firebaseArray(ref);
-    
-    this.getActiveUsers = function(){
+
+    Users.getActiveUsers = function(){
       return activeUsers;
-    }
+    };
 
-    this.addActiveUser = function(name){
-      usersOnline.$add(name);
+    Users.addActiveUser = function(name){
+      activeUsers.$add(name);
+    ;
+    };
+  /*  Users.logIn(){
 
-      console.log("in USers " + name);
-      return this.activeUsers;
-    }
-   this.testVar = "pleasepleasework";
+  };
+
+  Users.logUserOut = function(){
+    this.username = null;
+    this.loggedInUser = null;
+    firebaseUser.uid = null;
+
+    console.log(username + loggedInUser + firebaseUser.uid);
+  };*/
+
     return Users;
-  }
+  };
 
   angular
     .module('blocChat')

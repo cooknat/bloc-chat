@@ -8,7 +8,7 @@
         this.newMessage = Message.send;
 
         this.usersOnline = Users.activeUsers;
-      
+
 
         /*var self = this;
 
@@ -26,13 +26,7 @@
             $scope.newMessage = null;
         };
 
-
-
-      //  this.logOut = SecurityCtrl.logUserOut();
-
-
-
-
+        
     }
 
     angular
