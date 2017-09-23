@@ -7,7 +7,7 @@
 
         this.newMessage = Message.send;
 
-        this.usersOnline = Users.activeUsers;
+        this.usersOnline = Users.getActiveUsers();
 
 
         /*var self = this;
@@ -26,8 +26,11 @@
             $scope.newMessage = null;
         };
 
-        
-    }
+        this.logOut = function(){
+            Users.logOut();
+        };
+
+    };
 
     angular
         .module('blocChat')

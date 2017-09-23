@@ -16,9 +16,6 @@
 <div class="right-side">
     <div class="room-header">
     <h2>{{ activeRoom.$value }}</h2>
-  <!--  <ul ng-repeat="person in home.usersOnline">
-     <li>{{ person.$value }}</li>
-   </ul>-->
   </div>
   <div class="room-content">
     <div class="messages">
@@ -30,6 +27,7 @@
   </div>
     <div class="people">
      <h4 ng-show="activeRoom.$value">who's here?</h4>
+        <p ng-show="activeRoom.$value" ng-repeat="person in home.usersOnline">{{ person.$value }}</p>    
     </div>
   </div>
 

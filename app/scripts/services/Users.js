@@ -14,13 +14,16 @@
 
     };
 
+    Users.removeUser = function(name){
+       activeUsers.$remove(name);
+    };
+
     Users.fireLogin = function(userName){
       firebase.auth().signInAnonymously().then(function(firebaseUser) {
           this.loggedInUser = {
                                 id: firebaseUser.uid,
                                 name: userName
                               };
-                              console.log(this.loggedInUser.name);
 
         }).catch(function(error) {
           console.error("Authentication failed:", error);
@@ -34,15 +37,18 @@
         Users.addActiveUser(userName);
       };
 
-
-  /*
-  Users.logUserOut = function(){
-    this.username = null;
+  Users.logOut = function(){
+    Users.removeUser(this.userName);
+    this.userName = null;  
     this.loggedInUser = null;
-    firebaseUser.uid = null;
+    $cookies.remove('blocChatCurrentUser');
 
-    console.log(username + loggedInUser + firebaseUser.uid);
-  };*/
+    firebase.auth().signOut().then(function() {
+        //console.log('Signed Out');
+      }, function(error) {
+        console.error('Sign Out Error', error);
+      });
+  };
 
     return Users;
   };
